@@ -1,9 +1,9 @@
 class PasswordsController < ApplicationController
 
-    def show 
+    def index 
         passwords = Password.where(user_id: params[:user_id])
         byebug
-        render json: passwords, include: :user
+        render json: passwords
     end
 
 

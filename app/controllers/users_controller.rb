@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     def create
         # byebug
         user = User.create!(user_params)
+        session[:user_id] = user.id
         # byebug
         render json: user, status: :created
     end
@@ -11,11 +12,7 @@ class UsersController < ApplicationController
     #keep user signed in 
     def show 
         user = User.find_by(id: session[:user_id])
-        if user 
-            render json: user 
-        else 
-            render json: { error: "Not authorized" }, status: :unauthorized
-        end
+        render json: user 
     end
 
 
