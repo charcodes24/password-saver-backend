@@ -13,9 +13,7 @@ class PasswordsController < ApplicationController
     end
 
     def create
-        byebug
         password = Password.create!(password_params)
-        byebug
         render json: password, status: 200
     end
 
