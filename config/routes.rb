@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # resources :passwords
-  resources :passwords, only: [:show]
+  resources :passwords, only: [:show, :update]
   resources :users do 
     resources :passwords, only: [:index, :show]
   end
