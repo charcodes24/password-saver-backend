@@ -18,3 +18,20 @@ User.create(name:"test", username:"test", password:"test", password_confirmation
 puts "Seeding passwords..."
 User.find(1).passwords.create(password_for:"Work Log-in", password:"work")
 User.find(1).passwords.create(password_for:"Wells Fargo", password:"bank")
+User.find(1).passwords.create(password_for:"Email", password:"email")
+
+User.find(2).passwords.create(password_for:"Work Log-in", password:"work")
+User.find(2).passwords.create(password_for:"Wells Fargo", password:"bank")
+User.find(2).passwords.create(password_for:"Email", password:"email")
+
+User.find(1).passwords.create(password_for:"Work Log-in", password:"work")
+User.find(1).passwords.create(password_for:"Wells Fargo", password:"bank")
+User.find(1).passwords.create(password_for:"Email", password:"email")
+
+User.find(1).passwords.create(password_for:"Work Log-in", password:"work")
+User.find(1).passwords.create(password_for:"Wells Fargo", password:"bank")
+User.find(1).passwords.create(password_for:"Email", password:"email")
+
+User.find(1).passwords.create(password_for:"Wells Fargo", password:"bank")
+User.find(1).passwords.create(password_for:"Wells Fargo", password:"bank")
+User.find(1).passwords.create(password_for:"Email", password:"email")
