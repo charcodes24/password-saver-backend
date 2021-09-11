@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # resources :passwords
-  resources :users, only: [:create]
-
+  resources :users, only: [:create, :show]
+  resources :passwords, only: [:show]
   #user login
   post "/login", to: "sessions#create"
   #user logout

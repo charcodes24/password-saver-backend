@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+    before_action :authorize, only: [:logout]
 
     def create
         user = User.find_by(username: params[:username])

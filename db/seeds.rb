@@ -16,22 +16,22 @@ User.create(name:"adam", username:"adam", password:"adam", password_confirmation
 User.create(name:"test", username:"test", password:"test", password_confirmation:"test")
 
 puts "Seeding passwords..."
-User.find(1).passwords.create(password_for:"Work Log-in", password:"work")
-User.find(1).passwords.create(password_for:"Wells Fargo", password:"bank")
-User.find(1).passwords.create(password_for:"Email", password:"email")
+User.find(1).passwords.create(key:"Work Log-in", chain:"work")
+User.find(1).passwords.create(key:"Wells Fargo", chain:"bank")
+User.find(1).passwords.create(key:"Email", chain:"email")
 
-User.find(2).passwords.create(password_for:"Work Log-in", password:"work")
-User.find(2).passwords.create(password_for:"Wells Fargo", password:"bank")
-User.find(2).passwords.create(password_for:"Email", password:"email")
+User.find(2).passwords.create(key:"Work Log-in", chain:"work")
+User.find(2).passwords.create(key:"Wells Fargo", chain:"bank")
+User.find(2).passwords.create(key:"Email", chain:"email")
 
-User.find(1).passwords.create(password_for:"Work Log-in", password:"work")
-User.find(1).passwords.create(password_for:"Wells Fargo", password:"bank")
-User.find(1).passwords.create(password_for:"Email", password:"email")
+User.find(3).passwords.create(key:"Work Log-in", chain:"work")
+User.find(3).passwords.create(key:"Wells Fargo", chain:"bank")
+User.find(3).passwords.create(key:"Email", chain:"email")
 
-User.find(1).passwords.create(password_for:"Work Log-in", password:"work")
-User.find(1).passwords.create(password_for:"Wells Fargo", password:"bank")
-User.find(1).passwords.create(password_for:"Email", password:"email")
+User.find(4).passwords.create(key:"Work Log-in", chain:"work")
+User.find(4).passwords.create(key:"Wells Fargo", chain:"bank")
+User.find(4).passwords.create(key:"Email", chain:"email")
 
-User.find(1).passwords.create(password_for:"Wells Fargo", password:"bank")
-User.find(1).passwords.create(password_for:"Wells Fargo", password:"bank")
-User.find(1).passwords.create(password_for:"Email", password:"email")
+User.find(5).passwords.create(key:"Wells Fargo", chain:"bank")
+User.find(5).passwords.create(key:"Wells Fargo", chain:"bank")
+User.find(5).passwords.create(key:"Email", chain:"email")
