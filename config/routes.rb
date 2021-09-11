@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
   # resources :passwords
-  resources :passwords, only: [:show, :update]
+  resources :passwords, only: [:show, :update, :destroy, :create]
   resources :users do 
     resources :passwords, only: [:index, :show]
   end
 
 
+  #add new password
+  get '/passwords', to: 'passwords#create'
   #user signup
   post '/signup', to: 'users#create'
   #user login
