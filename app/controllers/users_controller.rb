@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-    before_action :authorize, except: :create
+  rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
+    before_action :authorize, only: [:show]
 
     def create
         # byebug
@@ -20,5 +21,16 @@ class UsersController < ApplicationController
 
     def user_params
         user_params = params.permit(:name, :username, :password, :password_confirmation)
+    end
+
+    def render_unprocessable_entity_response(e)
+        render json: { errors: [e.record.errors.full_messages] }, status: :unprocessable_entity
+    end
+
+    def authorize
+        unless session.include?(:user_id)
+        render json: { errors: ['Unauthorized access, please login'] },
+                status: :unauthorized
+        end
     end
 end
