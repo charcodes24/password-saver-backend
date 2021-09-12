@@ -26,6 +26,6 @@ class PasswordsController < ApplicationController
     private
 
     def password_params
-        params.permit(:id, :key, :chain, :user_id)
+        params.permit(:id, :key, :charm, :chain, :user_id)
     end
 end
