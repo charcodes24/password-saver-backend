@@ -2,9 +2,9 @@ class PasswordsController < ApplicationController
 
     def index 
         passwords = Password.where(user_id: params[:user_id])
-        # byebug
         render json: passwords
     end
+
 
     def update
         password = Password.find_by(id: params[:id]).update(password_params)
@@ -12,16 +12,19 @@ class PasswordsController < ApplicationController
         render json: updated_password, status: 200
     end
 
+
     def create
         password = Password.create!(password_params)
         render json: password, status: 200
     end
+
 
     def destroy 
         password = Password.find_by(id: params[:id]).destroy 
         render json: password, status: 200
     end
 
+    
 
     private
 

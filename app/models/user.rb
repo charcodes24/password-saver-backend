@@ -4,5 +4,5 @@ class User < ApplicationRecord
     has_many :passwords
 
     validates :username, presence: true 
-    validates :username, uniqueness: true 
+    validates :username, uniqueness: { case_sensitive: false }
 end

@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-    before_action :authorize, only: [:logout]
+    before_action :authorize, only: [:destroy]
 
     def create
         user = User.find_by(username: params[:username])
@@ -15,4 +15,5 @@ class SessionsController < ApplicationController
         session.destroy 
         render json: { message: "user logged out"}
     end
+
 end

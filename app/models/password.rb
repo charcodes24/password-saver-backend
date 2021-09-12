@@ -4,4 +4,5 @@ class Password < ApplicationRecord
     validates :key, presence: true 
     validates :charm, presence: true 
     validates :chain, presence: true 
+
 end
